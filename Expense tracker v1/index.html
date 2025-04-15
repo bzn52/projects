@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense and Income Tracker</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="title section-title">Expense and Income Tracker</h1>
+        <div class="section">
+            <h2 class="subtitle">Add Transaction</h2>
+            <form id="add-transaction-form">
+                <div class="field">
+                    <label class="label">Date</label>
+                    <div class="control">
+                        <input class="input" type="date" id="transaction-date" required>
+                    </div>
+                </div>
+                <div class="field">
+                    <label class="label">Category</label>
+                    <div class="control">
+                        <input class="input" type="text" id="transaction-category" required>
+                    </div>
+                </div>
+                <div class="field">
+                    <label class="label">Type</label>
+                    <div class="control">
+                        <label class="radio">
+                            <input type="radio" name="transaction-type" value="expense" checked>
+                            Expense
+                        </label>
+                        <label class="radio">
+                            <input type="radio" name="transaction-type" value="income">
+                            Income
+                        </label>
+                    </div>
+                </div>
+                <div class="field">
+                    <label class="label">Amount</label>
+                    <div class="control">
+                        <input class="input" type="number" id="transaction-amount" required>
+                    </div>
+                </div>
+                <div class="field">
+                    <div class="control">
+                        <button class="button is-primary">Add Transaction</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="section">
+            <h2 class="subtitle">Expenses</h2>
+            <table class="table is-fullwidth" id="expenses-table">
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Category</th>
+                        <th>Amount</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="expenses-tbody">
+                </tbody>
+            </table>
+        </div>
+        <div class="section">
+            <h2 class="subtitle">Incomes</h2>
+            <table class="table is-fullwidth" id="incomes-table">
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Category</th>
+                        <th>Amount</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="incomes-tbody">
+                </tbody>
+            </table>
+        </div>
+        <div class="section">
+            <p id="total-expenses">Total Expenses: $0</p>
+            <p id="total-incomes">Total Incomes: $0</p>
+            <p id="profit-loss"></p>
+        </div>
+    </div>
+    <div class="modal" id="expense-edit-modal">
+        <div class="modal-background"></div>
+        <div class="modal-card">
+            <header class="modal-card-head">
+                <p class="modal-card-title">Edit Expense</p>
+                <button class="delete" aria-label="close" id="close-expense-edit-modal"></button>
+            </header>
+            <section class="modal-card-body">
+                <form id="edit-expense-form">
+                    <div class="field">
+                        <label class="label">Date</label>
+                        <div class="control">
+                            <input class="input" type="date" id="edit-expense-date" required>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label class="label">Category</label>
+                        <div class="control">
+                            <input class="input" type="text" id="edit-expense-category" required>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label class="label">Amount</label>
+                        <div class="control">
+                            <input class="input" type="number" id="edit-expense-amount" required>
+                        </div>
+                    </div>
+                    <input type="hidden" id="edit-expense-index">
+                    <div class="field">
+                        <div class="control">
+                            <button class="button is-primary">Edit Expense</button>
+                        </div>
+                    </div>
+                </form>
+            </section>
+        </div>
+    </div>
+    <div class="modal" id="income-edit-modal">
+        <div class="modal-background"></div>
+        <div class="modal-card">
+            <header class="modal-card-head">
+                <p class="modal-card-title">Edit Income</p>
+                <button class="delete" aria-label="close" id="close-income-edit-modal"></button>
+            </header>
+            <section class="modal-card-body">
+                <form id="edit-income-form">
+                    <div class="field">
+                        <label class="label">Date</label>
+                        <div class="control">
+                            <input class="input" type="date" id="edit-income-date" required>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label class="label">Category</label>
+                        <div class="control">
+                            <input class="input" type="text" id="edit-income-category" required>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label class="label">Amount</label>
+                        <div class="control">
+                            <input class="input" type="number" id="edit-income-amount" required>
+                        </div>
+                    </div>
+                    <input type="hidden" id="edit-income-index">
+                    <div class="field">
+                        <div class="control">
+                            <button class="button is-primary">Edit Income</button>
+                        </div>
+                    </div>
+                </form>
+            </section>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

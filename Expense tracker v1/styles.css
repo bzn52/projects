@@ -1,0 +1,78 @@
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f5f5f5;
+    padding: 20px;
+}
+.container {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+.section {
+    margin-bottom: 20px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+}
+.section-title {
+    margin-top: 0;
+    color: #4a4a4a;
+}
+table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-bottom: 20px;
+}
+th, td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+}
+th {
+    background-color: #f0f0f0;
+}
+.button {
+    margin: 5px;
+    border-radius: 5px;
+}
+.button.is-primary {
+    background-color: #4a4a4a;
+    color: #fff;
+    border: none;
+}
+.button.is-primary:hover {
+    background-color: #333;
+}
+.button.is-danger {
+    background-color: #ff3737;
+    color: #fff;
+    border: none;
+}
+.button.is-danger:hover {
+    background-color: #ff0000;
+}
+.modal-card {
+    width: 400px;
+    border-radius: 10px;
+}
+#profit-loss {
+    font-size: 18px;
+    font-weight: bold;
+}
+.profit {
+    color: green;
+}
+.loss {
+    color: red;
+}
+@media only screen and (max-width: 768px) {
+    .container {
+        margin: 20px auto;
+    }
+}
